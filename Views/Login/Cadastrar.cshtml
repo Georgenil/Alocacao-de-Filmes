@@ -1,0 +1,39 @@
+﻿@model MinhaAppVS.Models.CadastrarUsuario
+
+@{
+    ViewData["Title"] = "Cadastrar";
+}
+
+<div class="modal">
+    <form asp-action="Cadastrar">
+        <div asp-validation-summary="ModelOnly" class="container text-danger">
+            <
+            <h1>Cadastrar</h1>
+            <p>Forneça os dados para cadastrar sua conta.</p>
+            <hr>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Senha" class="control-label"></label>
+                <input asp-for="Senha" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label for="psw-repeat"><b>Repeat Password</b></label>
+                <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+            </div>
+            <label>
+                <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+            </label>
+
+            <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+
+            <div class="clearfix">
+                <button type="button" asp-action="Index" class="cancelbtn">Cancel</button>
+                <button asp-action="" type="submit" class="signupbtn">Sign Up</button>
+            </div>
+        </div>
+    </form>
+</div>
